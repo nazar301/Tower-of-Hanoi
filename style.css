@@ -1,0 +1,182 @@
+ #scoreboard {
+    display: grid;
+    grid-template-rows: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+h1 {
+    grid-row: 1;
+    grid-column: 1 span 3;
+    text-align: center;
+}
+h3 {
+    text-align: center;
+    color: brown;
+}
+/* .score {
+    grid-row: 2;
+    grid-column: 1;
+} */
+.moves {
+    grid-row: 2;
+    grid-column: 2;
+}
+/* .name {
+    grid-row: 2;
+    grid-column: 3;
+} */
+ 
+
+
+
+ .game {
+    /* z-index: -10; */
+    /* background-image: url("sunrise.jpg"); */
+    background: lightblue;
+    object-fit: fill;
+    position: relative;
+}
+.container {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+    margin: 70px auto 0;
+    width: 100vmin;
+    height: 400px;
+}
+.box{
+    /* z-index: -1; */
+    display: flex;
+    width: 30%;
+    height: 100%;
+}
+#left {
+    display: flex;
+    flex-direction: column;
+    /* background-color: lavender; */
+    /* background-image: url("https://cdnimg.webstaurantstore.com/images/products/large/82979/59802.jpg"); */
+    background-position: center;
+    justify-content: flex-end;
+    
+}
+#center {
+    /* background-color: aquamarine; */
+    background-position: center;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+}
+#right {
+    /* background-color: aqua; */
+    background-position: center;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+
+}
+.disk {
+    z-index: 3;
+    border-radius: 30%;
+    height: 20px;
+    pointer-events: on;
+    
+}
+  .poleT {
+     z-index: -3; 
+    position: absolute;
+
+    left: 47.5%;
+    width: 15px;
+    height: 250px;
+    background: tan;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.poleTR {
+     z-index: -3; 
+    position: absolute;
+    
+    left: 81%;
+    width: 15px;
+    height: 250px;
+    background: tan;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.pole {
+     z-index: -3; 
+    position: absolute;
+    left: 14.25%;
+    width: 15px;
+    height: 250px;
+    background: tan;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}  
+
+#one {
+    
+    margin: 0 auto;
+    background-color: red;
+    width: 30px;
+}
+#two {
+    margin:0 auto;
+    background-color: green;
+    width: 45px;
+}
+#three {
+    margin: 0 auto;
+    background-color: blue;
+    width: 60px;
+}
+#four{
+    margin: 0 auto;
+    background-color: yellow;
+    width: 75px;
+}
+#five{
+    margin: 0 auto;
+    background-color: purple;
+    width: 90px;
+}
+#six{
+    margin: 0 auto;
+    background-color: aqua;
+    width: 105px;
+}
+#seven{
+    margin: 0 auto;
+    background-color: chartreuse;
+    width: 120px;
+}
+#eight{
+    margin: 0 auto;
+    background-color: burlywood;
+    width: 135px;
+}
+#nine{
+    margin: 0 auto;
+    background-color: lightyellow;
+    width: 150px;
+}
+#ten{
+    margin: 0 auto;
+    background-color: dodgerblue;
+    width: 165px;
+}  
+
+.BSelectThree {
+    color: blue;
+    background-color: aqua;
+}
+.BSelectFive {
+    color: blue;
+    background-color: aqua;
+}
+.BSelectTen {
+    color: blue;
+    background-color: aqua;
+}
+

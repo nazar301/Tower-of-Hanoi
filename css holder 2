@@ -1,0 +1,44 @@
+.poles {
+    display: flex;
+}
+.pole { 
+      
+       z-index: 1;  
+       width: 400px;
+      height: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+} 
+#left {
+    background-color: red;
+    
+ 
+
+    }
+#center {
+    background-color: blue;
+    
+}
+#right {
+    background-color: green;
+   
+   }
+.disk {
+    height: 1rem;
+    border-radius: .4rem;
+    width: 30%;
+    bottom: 0rem;
+    margin: auto;
+    }
+#one {
+   
+    height: 1rem;
+    border-radius: .4rem;
+    width: 100px;
+    height: 15px;
+    bottom: 0rem;
+    margin: auto;
+    background-color: aliceblue;
+}
