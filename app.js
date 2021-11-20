@@ -46,6 +46,9 @@ let boxCenter = document.querySelector("#center")
 let boxRight = document.querySelector("#right")
 let container = document.querySelectorAll(".box")
 
+// disks array
+
+let disks = [$("#one"), $("#two"), $("#three"), $("#four"),$("#five"), $("#six"), $("#seven"), $("#eight"),$("#nine"), $("#ten")]
 
 
 // drag and drop function
@@ -62,9 +65,12 @@ function allowDrop(ev) {
 
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
-  //  if (ev.currentTarget.parent = ) {
+  if (ev.target.parentElement.index != 1 ) {
+    
+    // select first child available in the parent div
 
-  //  }
+  }
+  
   
   // if (container.length >= 1) {
   //   $(ev.target).find(":first-child")
@@ -111,6 +117,7 @@ function drop(ev) {
 
 
 // possible way to select sizing to prevent movement
+
 // const size = (document.querySelector("#one").value)
 // console.log(size)
 // const sizeOne = document.querySelector("#one")
