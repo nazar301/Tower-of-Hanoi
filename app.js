@@ -44,6 +44,7 @@ let buttonTen = document.querySelector(".BSelectTen").addEventListener("click", 
 let boxLeft = document.querySelector("#left")
 let boxCenter = document.querySelector("#center")
 let boxRight = document.querySelector("#right")
+let container = document.querySelectorAll(".box")
 
 
 
@@ -53,41 +54,50 @@ function allowDrop(ev) {
   // prevent drop into other disks
   if ( ev.target.getAttribute("draggable") == "true") {
     ev.dataTransfer.dropEffect = "none"
-  } 
-  // else (ev.dataTransfer.dropEffect = "all")
+  };
+  
+ 
 
 }
+let c = document.body.children
+console.log(c)
 
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
   
+  
+  // if (container.length >= 1) {
+  //   $(ev.target).find(":first-child")
+  //   console.log("true") 
+  //   console.log($(ev.parent).find(":first-child"))
+  // }
  
-  if (boxLeft.hasChildNodes()) {
-    let children = boxLeft.childNodes;
+//   if (boxLeft.hasChildNodes()) {
+//     let children = boxLeft.childNodes;
   
-    for (let i = 0; i < children.length; i++) {
-      // console.log(boxLeft.childNodes)
+//     for (let i = 0; i < children.length; i++) {
+//       // console.log(boxLeft.childNodes)
 
-}; 
-}
+// }; 
+// }
   
   
-  if (boxCenter.hasChildNodes()) {
-    let children = boxCenter.childNodes;
+//   if (boxCenter.hasChildNodes()) {
+//     let children = boxCenter.childNodes;
   
-    for (let i = 0; i < children.length; i++) {
-      // console.log(boxCenter.childNodes)
+//     for (let i = 0; i < children.length; i++) {
+//       // console.log(boxCenter.childNodes)
       
-}
-  };
-  if (boxRight.hasChildNodes()) {
-    let children = boxRight.childNodes;
+// }
+//   };
+//   if (boxRight.hasChildNodes()) {
+//     let children = boxRight.childNodes;
   
-    for (let i = 0; i < children.length; i++) {
-      // console.log(boxRight.childNodes)
+//     for (let i = 0; i < children.length; i++) {
+//       // console.log(boxRight.childNodes)
       
-}
-  };
+// }
+//   };
 }
 
 function drop(ev) {
@@ -98,12 +108,18 @@ function drop(ev) {
   
 }
 
-// const size = getComputedStyle(document.querySelector("#one"))
-// console.log(size)
-// const sizeOne = document.querySelector("#one")
-// const width = sizeOne.style.margin
-// console.log(width)
+const size = (document.querySelector("#one").value)
+console.log(size)
+const sizeOne = document.querySelector("#one")
+const width = sizeOne.innerHTML
+if (width == 1){
+console.log(width)} else { console.log("no")}
 
-// var widthOne = Number(sizeOne.style.width.replace(/[^\d\.\-]/g, ''));
 
-// console.log(widthOne)
+for (var i=0; i<width.length; i++){ 
+   parseFloat(width[i].innerHTML);
+   if (width == 1){
+    console.log(width)} else { console.log("no")}
+  console.log(width)
+}
+console.log(width)

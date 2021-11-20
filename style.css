@@ -120,51 +120,61 @@ h3 {
     margin: 0 auto;
     background-color: red;
     width: 30px;
+    color: red;
 }
 #two {
     margin:0 auto;
     background-color: green;
     width: 45px;
+    color: green;
 }
 #three {
     margin: 0 auto;
     background-color: blue;
     width: 60px;
+    color: blue;
 }
 #four{
     margin: 0 auto;
     background-color: yellow;
     width: 75px;
+    color: yellow;
 }
 #five{
     margin: 0 auto;
     background-color: purple;
     width: 90px;
+    color: purple;
 }
 #six{
     margin: 0 auto;
     background-color: aqua;
     width: 105px;
+    color: aqua;
 }
 #seven{
     margin: 0 auto;
     background-color: chartreuse;
     width: 120px;
+    color: chartreuse;
 }
 #eight{
     margin: 0 auto;
     background-color: burlywood;
     width: 135px;
+    color: burlywood;
 }
 #nine{
     margin: 0 auto;
     background-color: lightyellow;
     width: 150px;
+    color: lightyellow;
 }
 #ten{
     margin: 0 auto;
     background-color: dodgerblue;
     width: 165px;
+    color: dodgerblue;
 }  
 
 .BSelectThree {
