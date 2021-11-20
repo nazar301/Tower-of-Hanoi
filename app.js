@@ -59,12 +59,12 @@ function allowDrop(ev) {
  
 
 }
-let c = document.body.children
-console.log(c)
 
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
-  
+  //  if (ev.currentTarget.parent = ) {
+
+  //  }
   
   // if (container.length >= 1) {
   //   $(ev.target).find(":first-child")
@@ -90,11 +90,11 @@ function drag(ev) {
       
 // }
 //   };
-//   if (boxRight.hasChildNodes()) {
-//     let children = boxRight.childNodes;
+//   if (container.hasChildNodes()) {
+//     let children = container.childNodes;
   
 //     for (let i = 0; i < children.length; i++) {
-//       // console.log(boxRight.childNodes)
+//       console.log(container.childNodes)
       
 // }
 //   };
@@ -108,18 +108,22 @@ function drop(ev) {
   
 }
 
-const size = (document.querySelector("#one").value)
-console.log(size)
-const sizeOne = document.querySelector("#one")
-const width = sizeOne.innerHTML
-if (width == 1){
-console.log(width)} else { console.log("no")}
 
 
-for (var i=0; i<width.length; i++){ 
-   parseFloat(width[i].innerHTML);
-   if (width == 1){
-    console.log(width)} else { console.log("no")}
-  console.log(width)
-}
-console.log(width)
+// possible way to select sizing to prevent movement
+// const size = (document.querySelector("#one").value)
+// console.log(size)
+// const sizeOne = document.querySelector("#one")
+// const width = sizeOne.innerHTML
+// if (width == 1){
+// // console.log(width)} else { console.log("no")}
+// }
+
+// for (var i=0; i<width.length; i++){ 
+//    parseFloat(width[i].innerHTML);
+//    if (width == 1){
+//     console.log(width)} else { console.log("no")}
+//   // console.log(width)
+// }
+// // console.log(width)
+
