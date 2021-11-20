@@ -50,7 +50,12 @@ let boxRight = document.querySelector("#right")
 // drag and drop function
 function allowDrop(ev) {
   ev.preventDefault();
-  
+  // prevent drop into other disks
+  if ( ev.target.getAttribute("draggable") == "true") {
+    ev.dataTransfer.dropEffect = "none"
+  } 
+  // else (ev.dataTransfer.dropEffect = "all")
+
 }
 
 function drag(ev) {
@@ -65,7 +70,7 @@ function drag(ev) {
 
 }; 
 }
-  }
+  
   
   if (boxCenter.hasChildNodes()) {
     let children = boxCenter.childNodes;
@@ -83,6 +88,7 @@ function drag(ev) {
       
 }
   };
+}
 
 function drop(ev) {
   ev.preventDefault();
@@ -92,8 +98,12 @@ function drop(ev) {
   
 }
 
+// const size = getComputedStyle(document.querySelector("#one"))
+// console.log(size)
+// const sizeOne = document.querySelector("#one")
+// const width = sizeOne.style.margin
+// console.log(width)
 
+// var widthOne = Number(sizeOne.style.width.replace(/[^\d\.\-]/g, ''));
 
-
-
-
+// console.log(widthOne)
