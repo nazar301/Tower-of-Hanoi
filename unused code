@@ -1,0 +1,67 @@
+
+// let moves = document.querySelector('.moves').val
+
+// const selectTopDisc = document.querySelector(".box.selected") 
+
+  //  let discSelector = document.querySelectorAll(".box").addEventListener("click" (
+  //   discSelector.onclick = function(){
+  //     select.target.pop(":nth-child") 
+  //     console.log("here")
+  //   }
+  
+
+    // discSelector.onclick = function () {
+    //   slect.target.append ()
+    // }
+  
+  
+    
+    
+//     click on the next pole to change the location
+
+    
+// block out movement so bottom disk cant be moved if it has something on top
+// block stacking to prevent movement of bigger disk over small disk
+// event listeners for the disk
+// set a difficulty from 3 to 10 disks disable the others depending on choice
+
+
+
+// drag function /movement
+
+ // if (Node.parentNode) {
+  //   Node.parentNode.removeChild(Node)
+  //   console.log(Node)
+  // }
+  // if(target != [0]) {
+  //   console.log() 
+    
+  
+  // if(box.length > 1){
+  //   target.disk[0]
+  //   console.log(target.disk[0])
+  // }; 
+
+  // const movables = document.querySelectorAll(".disk")
+// const container = document.querySelectorAll(".box")
+// movables.forEach(movable => { 
+//   console.log(movable)
+//   movable.addEventListener('dragstart', () => {
+//  console.log('moved')
+//   }),
+//   movable.addEventListener('dragend', () => {
+//     console.log('stoped')
+//   })
+// })
+
+// container.forEach(container => {
+//    container.addEventListener('dragover', e => {
+//      e.preventDefault()
+     
+//     //  const movable = document.querySelector(".disk")
+//      container.prepend(movables)
+//    })
+// })
+
+
+
