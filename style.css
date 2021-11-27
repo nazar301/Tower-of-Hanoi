@@ -50,6 +50,7 @@ h3 {
     display: flex;
     width: 30%;
     height: 100%;
+    user-select: none;
 }
 #left {
     display: flex;
@@ -183,13 +184,16 @@ ul {
 .BSelectThree {
     color: blue;
     background-color: aqua;
+    user-select: none;
 }
 .BSelectFive {
     color: blue;
     background-color: aqua;
+    user-select: none;
 }
 .BSelectTen {
     color: blue;
     background-color: aqua;
+    user-select: none;
 }
 

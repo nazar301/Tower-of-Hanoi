@@ -3,13 +3,13 @@ let buttonThree = document.querySelector(".BSelectThree").addEventListener("clic
   document.getElementById("one").style.display="initial";
   document.getElementById("two").style.display="initial";
   document.getElementById("three").style.display="initial";
-  document.getElementById("four").style.display="none";
-  document.getElementById("five").style.display="none";
-  document.getElementById("six").style.display="none";
-  document.getElementById("seven").style.display="none";
-  document.getElementById("eight").style.display="none";
-  document.getElementById("nine").style.display="none";
-  document.getElementById("ten").style.display="none";
+  document.getElementById("four").remove()
+  document.getElementById("five").remove()
+  document.getElementById("six").remove()
+  document.getElementById("seven").remove()
+  document.getElementById("eight").remove()
+  document.getElementById("nine").remove()
+  document.getElementById("ten").remove()
 
   
 });
@@ -20,11 +20,12 @@ let buttonFive = document.querySelector(".BSelectFive").addEventListener("click"
   document.getElementById("three").style.display="initial";
   document.getElementById("four").style.display="initial";
   document.getElementById("five").style.display="initial";
-  document.getElementById("six").style.display="none";
-  document.getElementById("seven").style.display="none";
-  document.getElementById("eight").style.display="none";
-  document.getElementById("nine").style.display="none";
-  document.getElementById("ten").style.display="none";
+  document.getElementById("six").remove()
+  document.getElementById("seven").remove()
+  document.getElementById("eight").remove()
+  document.getElementById("nine").remove()
+  document.getElementById("ten").remove()
+
 });
 // button selection for all
 let buttonTen = document.querySelector(".BSelectTen").addEventListener("click", () => {
@@ -50,6 +51,13 @@ let container = document.querySelectorAll(".box")
 
 let disks = [$("#one"), $("#two"), $("#three"), $("#four"),$("#five"), $("#six"), $("#seven"), $("#eight"),$("#nine"), $("#ten")]
 
+// if ($("#one").text() == 1){
+//   console.log($("#one").text())
+//   }
+
+
+
+
 
 // drag and drop function
 function allowDrop(ev) {
@@ -63,13 +71,123 @@ function allowDrop(ev) {
 
 }
 
+
+function toggleDrop() {
+  let left = document.querySelector("#left")
+  let center = document.querySelector("#center")
+  let right = document.querySelector("#right")
+  // console.log(center)
+  let children = Array.from(center.children)
+  let rchildren = Array.from(right.children)
+  let lchildren = Array.from(left.children)
+ 
+  let fChild = $(lchildren).first()
+  let rChild = $(rchildren).first()
+  let cChild = $(children).first()
+  console.log(fChild.text())
+  console.log(rChild.text())
+  console.log(cChild.text())
+
+  for (let i = 0; i < children.length; i++) {
+    //  console.log(left.children)
+    if(i === 0) {
+      children[i]?.setAttribute("draggable", true)
+    } else {
+      children[i]?.setAttribute("draggable", false)
+      children[i].style.userSelect = "none"
+    }
+  }
+
+  for (let i = 0; i < rchildren.length; i++) {
+    // console.log()
+    if(i === 0) {
+      rchildren[i]?.setAttribute("draggable", true)
+    } else {
+      rchildren[i]?.setAttribute("draggable", false)
+    }
+  }
+
+  for (let i = 0; i < lchildren.length; i++) {
+    // console.log()
+    if(i === 0) {
+      lchildren[i]?.setAttribute("draggable", true)
+      console.log()
+    } else {
+      lchildren[i]?.setAttribute("draggable", false)
+    }
+
+  }
+
+  // for (let i = 0; i > rChild.text();  i++ ) {
+  //   if( i == 0) {
+  //   return;
+  // } else {
+  //   console.log("false")
+  // }
+  // }
+
+
+  // check win
+  if (children.length === 0 && lchildren.length === 0) {
+    alert("won")
+  } else {
+      // console.log("keep going")
+  }
+  if (rchildren.length === 0 && lchildren.length === 0) {
+    alert("won")
+  } else {
+      // console.log("keep going")
+  }
+
+}
+
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
+  // console.log(ev.target.parentElement.id)
+  ev.dataTransfer.setData("column", ev.target.parentElement.id);
   if (ev.target.parentElement.index != 1 ) {
     
     // select first child available in the parent div
-
+// console.log(ev.target.parentElement)
   }
+
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  let column = ev.dataTransfer.getData("column")
+  // console.log(data, column)
+  if (column === ev.target.id){
+    return;
+  }
+  ev.target.prepend(document.getElementById(data));
+  console.log(data)
+  console.log(column)
+  toggleDrop()
+  
+}
+
+
+
+// possible way to select sizing to prevent movement
+
+// const size = (document.querySelector("#one").value)
+// console.log(size)
+// const sizeOne = document.querySelector("#one")
+// const width = sizeOne.innerHTML
+// if (width == 1){
+// // console.log(width)} else { console.log("no")}
+// }
+
+// for (var i=0; i<width.length; i++){ 
+//    parseFloat(width[i].innerHTML);
+//    if (width == 1){
+//     console.log(width)} else { console.log("no")}
+//   // console.log(width)
+// }
+// // console.log(width)
+
   
   
   // if (container.length >= 1) {
@@ -104,33 +222,3 @@ function drag(ev) {
       
 // }
 //   };
-}
-
-function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.prepend(document.getElementById(data));
-  // console.log(ev.target)
-  
-}
-
-
-
-// possible way to select sizing to prevent movement
-
-// const size = (document.querySelector("#one").value)
-// console.log(size)
-// const sizeOne = document.querySelector("#one")
-// const width = sizeOne.innerHTML
-// if (width == 1){
-// // console.log(width)} else { console.log("no")}
-// }
-
-// for (var i=0; i<width.length; i++){ 
-//    parseFloat(width[i].innerHTML);
-//    if (width == 1){
-//     console.log(width)} else { console.log("no")}
-//   // console.log(width)
-// }
-// // console.log(width)
-
