@@ -181,7 +181,10 @@ function drop(ev) {
 
   } else  if ((ev.target.id === "right" && (diskTarget < rChild.text())) || (ev.target.id ==="right" && rchildren == 0)){ 
       console.log("new")
-  }else {
+  }else  if ((ev.target.id === "left" && (diskTarget < lChild.text())) || (ev.target.id ==="left" && lchildren == 0)){ 
+    console.log("new")
+  
+    }else {
 
       console.log("illigal move")
           return false;
