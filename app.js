@@ -41,23 +41,6 @@ let buttonTen = document.querySelector(".BSelectTen").addEventListener("click", 
   document.getElementById("ten").style.display="initial";
 });
 
-// containers for disks 
-let boxLeft = document.querySelector("#left")
-let boxCenter = document.querySelector("#center")
-let boxRight = document.querySelector("#right")
-let container = document.querySelectorAll(".box")
-
-// disks array
-
-let disks = [$("#one"), $("#two"), $("#three"), $("#four"),$("#five"), $("#six"), $("#seven"), $("#eight"),$("#nine"), $("#ten")]
-
-// if ($("#one").text() == 1){
-//   console.log($("#one").text())
-//   }
-
-
-
-
 
 // drag and drop function
 function allowDrop(ev) {
@@ -77,16 +60,19 @@ function toggleDrop() {
   let center = document.querySelector("#center")
   let right = document.querySelector("#right")
   // console.log(center)
+  
+ 
+  let lchildren = Array.from(left.children)
   let children = Array.from(center.children)
   let rchildren = Array.from(right.children)
-  let lchildren = Array.from(left.children)
  
-  let fChild = $(lchildren).first()
-  let rChild = $(rchildren).first()
+  let lChild = $(lchildren).first()
   let cChild = $(children).first()
-  console.log(fChild.text())
+  let rChild = $(rchildren).first()
+  console.log(lChild.text())
   console.log(rChild.text())
   console.log(cChild.text())
+  
 
   for (let i = 0; i < children.length; i++) {
     //  console.log(left.children)
@@ -111,20 +97,14 @@ function toggleDrop() {
     // console.log()
     if(i === 0) {
       lchildren[i]?.setAttribute("draggable", true)
-      console.log()
+      // console.log(lchildren[i])
     } else {
       lchildren[i]?.setAttribute("draggable", false)
+      // console.log(lchildren[i])
     }
 
   }
-
-  // for (let i = 0; i > rChild.text();  i++ ) {
-  //   if( i == 0) {
-  //   return;
-  // } else {
-  //   console.log("false")
-  // }
-  // }
+    
 
 
   // check win
@@ -145,11 +125,21 @@ function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
   // console.log(ev.target.parentElement.id)
   ev.dataTransfer.setData("column", ev.target.parentElement.id);
+  
+  // console.log(ev.target.innerText)
+ 
   if (ev.target.parentElement.index != 1 ) {
     
     // select first child available in the parent div
 // console.log(ev.target.parentElement)
   }
+  
+  // if ( ev.target.innerText == cChild.text()) {
+  //   console.log("works")
+  // } else {
+  //   console.log("illigal move")
+  // // StopEvent(ev)
+  // }
 
 }
 
@@ -157,16 +147,79 @@ function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   let column = ev.dataTransfer.getData("column")
-  // console.log(data, column)
+  let diskTarget = document.getElementById(data).innerHTML
+  
+ 
+  let left = document.querySelector("#left")
+  let center = document.querySelector("#center")
+  let right = document.querySelector("#right")
+  // console.log(center)
+  let children = Array.from(center.children)
+  let rchildren = Array.from(right.children)
+  let lchildren = Array.from(left.children)
+
+  let lChild = $(lchildren).first()
+  let rChild = $(rchildren).first()
+  let cChild = $(children).first()
+  console.log(lChild.text())
+  console.log(rChild.text())
+  console.log(cChild.text())
+
+
+
+  console.log(diskTarget)
+  
+  console.log(ev.target)
+
   if (column === ev.target.id){
     return;
   }
+  
+  
+    if ((ev.target.id === "center" && (diskTarget <= cChild.text()) ||(ev.target.id ==="center" && children == 0))) {
+      console.log("works")
+
+  } else  if ((ev.target.id === "right" && (diskTarget < rChild.text())) || (ev.target.id ==="right" && rchildren == 0)){ 
+      console.log("new")
+  }else {
+
+      console.log("illigal move")
+          return false;
+    }
+
+  
+    //  || ((diskTarget < rChild.text()) || rchildren == 0) || ((diskTarget < lChild.text()) || lchildren == 0)
+  // for (let i = 0; i < rchildren.length; i++) {
+  //   if ( (diskTarget < rChild.text()) || rchildren == 0 ) {
+  //     console.log("works")
+  //    } else {
+  //     console.log("illigal move")
+  //     return false;
+  //   }
+  // }
+    // if ( (diskTarget < rChild.text()) || rchildren == 0 ) {
+    //     console.log("works")
+    //    } else {
+    //     console.log("illigal move")
+    //     StopEvent(ev)
+    // }
+    
+    // if ( (diskTarget < lChild.text()) || lchildren == 0 ) {
+    //       console.log("works")
+    //      } else {
+    //       console.log("illigal move")
+    //       StopEvent(ev)
+    // }
+      
+
   ev.target.prepend(document.getElementById(data));
-  console.log(data)
-  console.log(column)
+  // console.log(data)
+  // console.log(column)
   toggleDrop()
   
+  
 }
+
 
 
 
