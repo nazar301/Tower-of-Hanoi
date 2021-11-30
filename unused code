@@ -65,3 +65,32 @@
 
 
 
+ //  || ((diskTarget < rChild.text()) || rchildren == 0) || ((diskTarget < lChild.text()) || lchildren == 0)
+  // for (let i = 0; i < rchildren.length; i++) {
+  //   if ( (diskTarget < rChild.text()) || rchildren == 0 ) {
+  //     console.log("works")
+  //    } else {
+  //     console.log("illigal move")
+  //     return false;
+  //   }
+  // }
+    // if ( (diskTarget < rChild.text()) || rchildren == 0 ) {
+    //     console.log("works")
+    //    } else {
+    //     console.log("illigal move")
+    //     StopEvent(ev)
+    // }
+    
+    // if ( (diskTarget < lChild.text()) || lchildren == 0 ) {
+    //       console.log("works")
+    //      } else {
+    //       console.log("illigal move")
+    //       StopEvent(ev)
+    // }
+    
+      // if ( ev.target.innerText == cChild.text()) {
+  //   console.log("works")
+  // } else {
+  //   console.log("illigal move")
+  // // StopEvent(ev)
+  // }

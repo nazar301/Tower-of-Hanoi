@@ -73,7 +73,7 @@ function toggleDrop() {
   console.log(rChild.text())
   console.log(cChild.text())
   
-
+  // prevent draging of disks if theres another one on top
   for (let i = 0; i < children.length; i++) {
     //  console.log(left.children)
     if(i === 0) {
@@ -123,25 +123,10 @@ function toggleDrop() {
 
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
-  // console.log(ev.target.parentElement.id)
-  ev.dataTransfer.setData("column", ev.target.parentElement.id);
-  
-  // console.log(ev.target.innerText)
- 
-  if (ev.target.parentElement.index != 1 ) {
-    
-    // select first child available in the parent div
-// console.log(ev.target.parentElement)
-  }
-  
-  // if ( ev.target.innerText == cChild.text()) {
-  //   console.log("works")
-  // } else {
-  //   console.log("illigal move")
-  // // StopEvent(ev)
-  // }
 
-}
+  ev.dataTransfer.setData("column", ev.target.parentElement.id);
+  if (ev.target.parentElement.index != 1 ) { }
+  }
 
 function drop(ev) {
   ev.preventDefault();
@@ -175,7 +160,7 @@ function drop(ev) {
     return;
   }
   
-  
+  // prevent droping of largert disks on smaller
     if ((ev.target.id === "center" && (diskTarget <= cChild.text()) ||(ev.target.id ==="center" && children == 0))) {
       console.log("works")
 
@@ -190,91 +175,11 @@ function drop(ev) {
           return false;
     }
 
-  
-    //  || ((diskTarget < rChild.text()) || rchildren == 0) || ((diskTarget < lChild.text()) || lchildren == 0)
-  // for (let i = 0; i < rchildren.length; i++) {
-  //   if ( (diskTarget < rChild.text()) || rchildren == 0 ) {
-  //     console.log("works")
-  //    } else {
-  //     console.log("illigal move")
-  //     return false;
-  //   }
-  // }
-    // if ( (diskTarget < rChild.text()) || rchildren == 0 ) {
-    //     console.log("works")
-    //    } else {
-    //     console.log("illigal move")
-    //     StopEvent(ev)
-    // }
-    
-    // if ( (diskTarget < lChild.text()) || lchildren == 0 ) {
-    //       console.log("works")
-    //      } else {
-    //       console.log("illigal move")
-    //       StopEvent(ev)
-    // }
-      
-
-  ev.target.prepend(document.getElementById(data));
+   ev.target.prepend(document.getElementById(data));
   // console.log(data)
   // console.log(column)
   toggleDrop()
-  
-  
-}
+  }
 
 
 
-
-// possible way to select sizing to prevent movement
-
-// const size = (document.querySelector("#one").value)
-// console.log(size)
-// const sizeOne = document.querySelector("#one")
-// const width = sizeOne.innerHTML
-// if (width == 1){
-// // console.log(width)} else { console.log("no")}
-// }
-
-// for (var i=0; i<width.length; i++){ 
-//    parseFloat(width[i].innerHTML);
-//    if (width == 1){
-//     console.log(width)} else { console.log("no")}
-//   // console.log(width)
-// }
-// // console.log(width)
-
-  
-  
-  // if (container.length >= 1) {
-  //   $(ev.target).find(":first-child")
-  //   console.log("true") 
-  //   console.log($(ev.parent).find(":first-child"))
-  // }
- 
-//   if (boxLeft.hasChildNodes()) {
-//     let children = boxLeft.childNodes;
-  
-//     for (let i = 0; i < children.length; i++) {
-//       // console.log(boxLeft.childNodes)
-
-// }; 
-// }
-  
-  
-//   if (boxCenter.hasChildNodes()) {
-//     let children = boxCenter.childNodes;
-  
-//     for (let i = 0; i < children.length; i++) {
-//       // console.log(boxCenter.childNodes)
-      
-// }
-//   };
-//   if (container.hasChildNodes()) {
-//     let children = container.childNodes;
-  
-//     for (let i = 0; i < children.length; i++) {
-//       console.log(container.childNodes)
-      
-// }
-//   };
